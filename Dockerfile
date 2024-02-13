@@ -1,4 +1,8 @@
 FROM openjdk:17
-WORKDIR /app
-COPY target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Set the working directory 
+WORKDIR /app 
+# Copy the packaged jar file into the container 
+COPY target/demo.jar /app 
+# Command to run the application 
+CMD ["java", "-jar", "demo.jar"]
